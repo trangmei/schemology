@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>coursemology_dev Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="bower/html5shiv/html5shiv.min.js"></script>
+  <script src="bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="index.html" class="navbar-brand"><b>coursemology_dev</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="components.html" title="List of system components">Components</a></li>-->
+			<li><a href="columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>Utility Tables</h1>
+      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+              <h3 class="box-title">Orphan Tables</h3>
+            </div>			
+            <div class="box-body">
+			<div id="grid" data-columns>
+				<div class="item">
+					<img src='diagrams/orphans/course_assessment_answer_voice_responses.1degree.png' usemap='#course_assessment_answer_voice_responses' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/course_assessment_question_scribings.1degree.png' usemap='#course_assessment_question_scribings' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/course_assessment_question_voice_responses.1degree.png' usemap='#course_assessment_question_voice_responses' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/course_lesson_plan_milestones.1degree.png' usemap='#course_lesson_plan_milestones' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/schema_migrations.1degree.png' usemap='#schema_migrations' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/course_assessment_answer_text_responses.1degree.png' usemap='#course_assessment_answer_text_responses' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/course_condition_levels.1degree.png' usemap='#course_condition_levels' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/ar_internal_metadata.1degree.png' usemap='#ar_internal_metadata' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/attachments.1degree.png' usemap='#attachments' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/read_marks.1degree.png' usemap='#read_marks' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/activities.1degree.png' usemap='#activities' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+				<div class="item">
+					<img src='diagrams/orphans/attachment_references.1degree.png' usemap='#attachment_references' style="max-width:100%;" border='0' alt='' align='top'></img>
+				</div>
+			</div>
+			<map id="course_assessment_answer_voice_responses" name="course_assessment_answer_voice_responses">
+<area shape="rect" id="node1" href="tables/course_assessment_answer_voice_responses.html" title="course_assessment_answer_voice_responses" alt="" coords="5,5,409,99">
+</map>
+<map id="course_assessment_question_scribings" name="course_assessment_question_scribings">
+<area shape="rect" id="node1" href="tables/course_assessment_question_scribings.html" title="course_assessment_question_scribings" alt="" coords="5,5,363,99">
+</map>
+<map id="course_assessment_question_voice_responses" name="course_assessment_question_voice_responses">
+<area shape="rect" id="node1" href="tables/course_assessment_question_voice_responses.html" title="course_assessment_question_voice_responses" alt="" coords="5,5,421,99">
+</map>
+<map id="course_lesson_plan_milestones" name="course_lesson_plan_milestones">
+<area shape="rect" id="node1" href="tables/course_lesson_plan_milestones.html" title="course_lesson_plan_milestones" alt="" coords="5,5,300,99">
+</map>
+<map id="schema_migrations" name="schema_migrations">
+<area shape="rect" id="node1" href="tables/schema_migrations.html" title="schema_migrations" alt="" coords="5,5,204,99">
+</map>
+<map id="course_assessment_answer_text_responses" name="course_assessment_answer_text_responses">
+<area shape="rect" id="node1" href="tables/course_assessment_answer_text_responses.html" title="course_assessment_answer_text_responses" alt="" coords="5,5,397,128">
+</map>
+<map id="course_condition_levels" name="course_condition_levels">
+<area shape="rect" id="node1" href="tables/course_condition_levels.html" title="course_condition_levels" alt="" coords="5,5,241,128">
+</map>
+<map id="ar_internal_metadata" name="ar_internal_metadata">
+<area shape="rect" id="node1" href="tables/ar_internal_metadata.html" title="ar_internal_metadata" alt="" coords="5,5,215,187">
+</map>
+<map id="attachments" name="attachments">
+<area shape="rect" id="node1" href="tables/attachments.html" title="attachments" alt="" coords="5,5,148,216">
+</map>
+<map id="read_marks" name="read_marks">
+<area shape="rect" id="node1" href="tables/read_marks.html" title="read_marks" alt="" coords="5,5,161,245">
+</map>
+<map id="activities" name="activities">
+<area shape="rect" id="node1" href="tables/activities.html" title="activities" alt="" coords="5,5,151,304">
+</map>
+<map id="attachment_references" name="attachment_references">
+<area shape="rect" id="node1" href="tables/attachment_references.html" title="attachment_references" alt="" coords="5,5,229,363">
+</map>
+
+			</div>
+		</div>			
+      </section>    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="bower/codemirror/codemirror.js"></script>
+<script src="bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="bower/admin-lte/dist/js/app.min.js"></script>
+<script src=""></script>
+<script src="schemaSpy.js"></script>
+</body>
+</html>

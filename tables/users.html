@@ -1,0 +1,1318 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>users - coursemology_dev Database</title>
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+  <!-- Bootstrap 3.3.5 -->
+  <link rel="stylesheet" href="../bower/admin-lte/bootstrap/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../bower/font-awesome/css/font-awesome.min.css">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="../bower/ionicons/css/ionicons.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="../bower/datatables.net-bs/css/dataTables.bootstrap.min.css">
+  <link rel="stylesheet" href="../bower/datatables.net-buttons-bs/css/buttons.bootstrap.min.css">
+  <!-- Code Mirror -->
+  <link rel="stylesheet" href="../bower/codemirror/codemirror.css">
+  <!-- Fonts -->
+  <link href='../fonts/indieflower/indie-flower.css' rel='stylesheet' type='text/css'>
+  <link href='../fonts/source-sans-pro/source-sans-pro.css' rel='stylesheet' type='text/css'>
+
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/AdminLTE.min.css">
+  <!-- Salvattore -->
+  <link rel="stylesheet" href="../bower/salvattore/salvattore.css">
+  <!-- AdminLTE Skins. Choose a skin from the css/skins
+       folder instead of downloading all of them to reduce the load. -->
+  <link rel="stylesheet" href="../bower/admin-lte/dist/css/skins/_all-skins.min.css">
+  <!-- SchemaSpy -->
+  <link rel="stylesheet" href="../schemaSpy.css">
+  
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="../bower/html5shiv/html5shiv.min.js"></script>
+  <script src="../bower/respond/respond.min.js"></script>
+  <![endif]-->
+</head>
+<!-- ADD THE CLASS layout-top-nav TO REMOVE THE SIDEBAR. -->
+<body class="hold-transition skin-blue layout-top-nav">
+<div class="wrapper">
+  <header class="main-header">
+    <nav class="navbar navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="../index.html" class="navbar-brand"><b>coursemology_dev</b> Database</a>
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+            <i class="fa fa-bars"></i>
+          </button>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="../index.html">Tables <span class="sr-only">(current)</span></a></li>            
+			<!--<li><a href="../components.html" title="List of system components">Components</a></li>-->
+			<li><a href="../columns.html" title="All of the columns in the schema">Columns</a></li>
+			<li><a href="../constraints.html" title="Useful for diagnosing error messages that just give constraint name or number">Constraints</a></li>
+			<li><a href="../relationships.html" title="Diagram of table relationships">Relationships</a></li>
+			<li><a href="../orphans.html" title="View of tables with neither parents nor children">Orphan&nbsp;Tables</a></li>				
+			<li><a href="../anomalies.html" title="Things that might not be quite right">Anomalies</a></li>
+          </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+        <!-- Navbar Right Menu -->
+
+      </div>
+      <!-- /.container-fluid -->
+    </nav>
+  </header>
+  <!-- Main content -->
+  <!-- Full Width Column -->
+  <div class="content-wrapper">
+          <!-- Content Header (Page header) -->
+      <section class="content-header">
+        <h1>users</h1></br>
+		      </section>
+      <!-- Main content -->
+      <section class="content">
+		<div class="box box-primary">
+			<div class="box-header with-border">
+			  <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
+              <h3 id="Columns" class="box-title">Columns</h3>
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+            <div class="box-body">
+				<table id="standard_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead align='left'>
+				<tr>
+				  <th>Column</th>
+				  <th>Type</th>
+				  <th>Size</th>
+				  <th title='Are nulls allowed?'>Nulls</th>
+				  <th title='Is column automatically updated?'>Auto</th>
+				  <th title='Default value'>Default</th>
+				  <th title='Columns in tables that reference this column'>Children</th>
+				  <th title='Columns in tables that are referenced by this column'>Parents</th>
+				  <th title='Comments' class="toggle"><span>Comments</span></th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+				 <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="id">id</span></td>
+				 <td>bigserial</td>
+				 <td>19</td>
+				 <td title=''></td>
+				 <td title='Automatically updated by the database'>√</td>
+				 <td>nextval(&#39;users_id_seq&#39;::regclass)</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="course_achievements.creator_id references users.id via fk_course_achievements_creator_id">
+						<a href='course_achievements.html'>course_achievements</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_achievements_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_achievements.updater_id references users.id via fk_course_achievements_updater_id">
+						<a href='course_achievements.html'>course_achievements</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_achievements_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_announcements.creator_id references users.id via fk_course_announcements_creator_id">
+						<a href='course_announcements.html'>course_announcements</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_announcements_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_announcements.updater_id references users.id via fk_course_announcements_updater_id">
+						<a href='course_announcements.html'>course_announcements</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_announcements_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_answer_scribing_scribbles.creator_id references users.id via fk_course_assessment_answer_scribing_scribbles_creator_id">
+						<a href='course_assessment_answer_scribing_scribbles.html'>course_assessment_answer_scribing_scribbles</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_answer_scribing_scribbles_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_answers.grader_id references users.id via fk_course_assessment_answers_grader_id">
+						<a href='course_assessment_answers.html'>course_assessment_answers</a><span class='relatedKey'>.grader_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_answers_grader_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_categories.creator_id references users.id via fk_course_assessment_categories_creator_id">
+						<a href='course_assessment_categories.html'>course_assessment_categories</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_categories_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_categories.updater_id references users.id via fk_course_assessment_categories_updater_id">
+						<a href='course_assessment_categories.html'>course_assessment_categories</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_categories_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_questions.creator_id references users.id via fk_course_assessment_questions_creator_id">
+						<a href='course_assessment_questions.html'>course_assessment_questions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_questions_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_questions.updater_id references users.id via fk_course_assessment_questions_updater_id">
+						<a href='course_assessment_questions.html'>course_assessment_questions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_questions_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_skill_branches.creator_id references users.id via fk_course_assessment_skill_branches_creator_id">
+						<a href='course_assessment_skill_branches.html'>course_assessment_skill_branches</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_skill_branches_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_skill_branches.updater_id references users.id via fk_course_assessment_skill_branches_updater_id">
+						<a href='course_assessment_skill_branches.html'>course_assessment_skill_branches</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_skill_branches_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_skills.creator_id references users.id via fk_course_assessment_skills_creator_id">
+						<a href='course_assessment_skills.html'>course_assessment_skills</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_skills_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_skills.updater_id references users.id via fk_course_assessment_skills_updater_id">
+						<a href='course_assessment_skills.html'>course_assessment_skills</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_skills_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_submissions.creator_id references users.id via fk_course_assessment_submissions_creator_id">
+						<a href='course_assessment_submissions.html'>course_assessment_submissions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_submissions_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_submissions.publisher_id references users.id via fk_course_assessment_submissions_publisher_id">
+						<a href='course_assessment_submissions.html'>course_assessment_submissions</a><span class='relatedKey'>.publisher_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_submissions_publisher_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_submissions.updater_id references users.id via fk_course_assessment_submissions_updater_id">
+						<a href='course_assessment_submissions.html'>course_assessment_submissions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_submissions_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_tabs.creator_id references users.id via fk_course_assessment_tabs_creator_id">
+						<a href='course_assessment_tabs.html'>course_assessment_tabs</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_tabs_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessment_tabs.updater_id references users.id via fk_course_assessment_tabs_updater_id">
+						<a href='course_assessment_tabs.html'>course_assessment_tabs</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessment_tabs_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessments.creator_id references users.id via fk_course_assessments_creator_id">
+						<a href='course_assessments.html'>course_assessments</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessments_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_assessments.updater_id references users.id via fk_course_assessments_updater_id">
+						<a href='course_assessments.html'>course_assessments</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_assessments_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_conditions.creator_id references users.id via fk_course_conditions_creator_id">
+						<a href='course_conditions.html'>course_conditions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_conditions_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_conditions.updater_id references users.id via fk_course_conditions_updater_id">
+						<a href='course_conditions.html'>course_conditions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_conditions_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_discussion_post_votes.creator_id references users.id via fk_course_discussion_post_votes_creator_id">
+						<a href='course_discussion_post_votes.html'>course_discussion_post_votes</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_discussion_post_votes_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_discussion_post_votes.updater_id references users.id via fk_course_discussion_post_votes_updater_id">
+						<a href='course_discussion_post_votes.html'>course_discussion_post_votes</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_discussion_post_votes_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_discussion_posts.creator_id references users.id via fk_course_discussion_posts_creator_id">
+						<a href='course_discussion_posts.html'>course_discussion_posts</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_discussion_posts_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_discussion_posts.updater_id references users.id via fk_course_discussion_posts_updater_id">
+						<a href='course_discussion_posts.html'>course_discussion_posts</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_discussion_posts_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_discussion_topic_subscriptions.user_id references users.id via fk_course_discussion_topic_subscriptions_user_id">
+						<a href='course_discussion_topic_subscriptions.html'>course_discussion_topic_subscriptions</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_discussion_topic_subscriptions_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_enrol_requests.user_id references users.id via fk_course_enrol_requests_user_id">
+						<a href='course_enrol_requests.html'>course_enrol_requests</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_enrol_requests_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_experience_points_records.awarder_id references users.id via fk_course_experience_points_records_awarder_id">
+						<a href='course_experience_points_records.html'>course_experience_points_records</a><span class='relatedKey'>.awarder_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_experience_points_records_awarder_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_experience_points_records.creator_id references users.id via fk_course_experience_points_records_creator_id">
+						<a href='course_experience_points_records.html'>course_experience_points_records</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_experience_points_records_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_experience_points_records.updater_id references users.id via fk_course_experience_points_records_updater_id">
+						<a href='course_experience_points_records.html'>course_experience_points_records</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_experience_points_records_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forum_subscriptions.user_id references users.id via fk_course_forum_subscriptions_user_id">
+						<a href='course_forum_subscriptions.html'>course_forum_subscriptions</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forum_subscriptions_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forum_topic_views.user_id references users.id via fk_course_forum_topic_views_user_id">
+						<a href='course_forum_topic_views.html'>course_forum_topic_views</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forum_topic_views_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forum_topics.creator_id references users.id via fk_course_forum_topics_creator_id">
+						<a href='course_forum_topics.html'>course_forum_topics</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forum_topics_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forum_topics.updater_id references users.id via fk_course_forum_topics_updater_id">
+						<a href='course_forum_topics.html'>course_forum_topics</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forum_topics_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forums.creator_id references users.id via fk_course_forums_creator_id">
+						<a href='course_forums.html'>course_forums</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forums_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_forums.updater_id references users.id via fk_course_forums_updater_id">
+						<a href='course_forums.html'>course_forums</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_forums_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_group_users.creator_id references users.id via fk_course_group_users_creator_id">
+						<a href='course_group_users.html'>course_group_users</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_group_users_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_group_users.updater_id references users.id via fk_course_group_users_updater_id">
+						<a href='course_group_users.html'>course_group_users</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_group_users_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_groups.creator_id references users.id via fk_course_groups_creator_id">
+						<a href='course_groups.html'>course_groups</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_groups_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_groups.updater_id references users.id via fk_course_groups_updater_id">
+						<a href='course_groups.html'>course_groups</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_groups_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_lesson_plan_items.creator_id references users.id via fk_course_lesson_plan_items_creator_id">
+						<a href='course_lesson_plan_items.html'>course_lesson_plan_items</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_lesson_plan_items_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_lesson_plan_items.updater_id references users.id via fk_course_lesson_plan_items_updater_id">
+						<a href='course_lesson_plan_items.html'>course_lesson_plan_items</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_lesson_plan_items_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_lesson_plan_todos.creator_id references users.id via fk_course_lesson_plan_todos_creator_id">
+						<a href='course_lesson_plan_todos.html'>course_lesson_plan_todos</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_lesson_plan_todos_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_lesson_plan_todos.updater_id references users.id via fk_course_lesson_plan_todos_updater_id">
+						<a href='course_lesson_plan_todos.html'>course_lesson_plan_todos</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_lesson_plan_todos_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_lesson_plan_todos.user_id references users.id via fk_course_lesson_plan_todos_user_id">
+						<a href='course_lesson_plan_todos.html'>course_lesson_plan_todos</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_lesson_plan_todos_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_material_folders.creator_id references users.id via fk_course_material_folders_creator_id">
+						<a href='course_material_folders.html'>course_material_folders</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_material_folders_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_material_folders.updater_id references users.id via fk_course_material_folders_updater_id">
+						<a href='course_material_folders.html'>course_material_folders</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_material_folders_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_materials.creator_id references users.id via fk_course_materials_creator_id">
+						<a href='course_materials.html'>course_materials</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_materials_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_materials.updater_id references users.id via fk_course_materials_updater_id">
+						<a href='course_materials.html'>course_materials</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_materials_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_answers.creator_id references users.id via fk_course_survey_answers_creator_id">
+						<a href='course_survey_answers.html'>course_survey_answers</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_answers_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_answers.updater_id references users.id via fk_course_survey_answers_updater_id">
+						<a href='course_survey_answers.html'>course_survey_answers</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_answers_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_questions.creator_id references users.id via fk_course_survey_questions_creator_id">
+						<a href='course_survey_questions.html'>course_survey_questions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_questions_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_questions.updater_id references users.id via fk_course_survey_questions_updater_id">
+						<a href='course_survey_questions.html'>course_survey_questions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_questions_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_responses.creator_id references users.id via fk_course_survey_responses_creator_id">
+						<a href='course_survey_responses.html'>course_survey_responses</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_responses_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_survey_responses.updater_id references users.id via fk_course_survey_responses_updater_id">
+						<a href='course_survey_responses.html'>course_survey_responses</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_survey_responses_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_surveys.creator_id references users.id via fk_course_surveys_creator_id">
+						<a href='course_surveys.html'>course_surveys</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_surveys_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_surveys.updater_id references users.id via fk_course_surveys_updater_id">
+						<a href='course_surveys.html'>course_surveys</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_surveys_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_user_invitations.confirmer_id references users.id via fk_course_user_invitations_confirmer_id">
+						<a href='course_user_invitations.html'>course_user_invitations</a><span class='relatedKey'>.confirmer_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_user_invitations_confirmer_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_user_invitations.creator_id references users.id via fk_course_user_invitations_creator_id">
+						<a href='course_user_invitations.html'>course_user_invitations</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_user_invitations_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_user_invitations.updater_id references users.id via fk_course_user_invitations_updater_id">
+						<a href='course_user_invitations.html'>course_user_invitations</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_user_invitations_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_users.creator_id references users.id via fk_course_users_creator_id">
+						<a href='course_users.html'>course_users</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_users_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_users.updater_id references users.id via fk_course_users_updater_id">
+						<a href='course_users.html'>course_users</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_users_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_users.user_id references users.id via fk_course_users_user_id">
+						<a href='course_users.html'>course_users</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_users_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_sessions.creator_id references users.id via fk_rails_6e4bd71803">
+						<a href='course_video_sessions.html'>course_video_sessions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_rails_6e4bd71803 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_sessions.updater_id references users.id via fk_rails_3a70ab54b7">
+						<a href='course_video_sessions.html'>course_video_sessions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_rails_3a70ab54b7 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_submissions.creator_id references users.id via fk_course_video_submissions_creator_id">
+						<a href='course_video_submissions.html'>course_video_submissions</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_video_submissions_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_submissions.updater_id references users.id via fk_course_video_submissions_updater_id">
+						<a href='course_video_submissions.html'>course_video_submissions</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_video_submissions_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_tabs.creator_id references users.id via fk_rails_7afddac54f">
+						<a href='course_video_tabs.html'>course_video_tabs</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_rails_7afddac54f <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_tabs.updater_id references users.id via fk_rails_7882231fb5">
+						<a href='course_video_tabs.html'>course_video_tabs</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_rails_7882231fb5 <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_topics.creator_id references users.id via fk_course_video_topics_creator_id">
+						<a href='course_video_topics.html'>course_video_topics</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_video_topics_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_video_topics.updater_id references users.id via fk_course_video_topics_updater_id">
+						<a href='course_video_topics.html'>course_video_topics</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_video_topics_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_videos.creator_id references users.id via fk_course_videos_creator_id">
+						<a href='course_videos.html'>course_videos</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_videos_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_videos.updater_id references users.id via fk_course_videos_updater_id">
+						<a href='course_videos.html'>course_videos</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_videos_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_virtual_classrooms.creator_id references users.id via fk_course_virtual_classrooms_creator_id">
+						<a href='course_virtual_classrooms.html'>course_virtual_classrooms</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_virtual_classrooms_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_virtual_classrooms.instructor_id references users.id via fk_course_virtual_classrooms_instructor_id">
+						<a href='course_virtual_classrooms.html'>course_virtual_classrooms</a><span class='relatedKey'>.instructor_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_virtual_classrooms_instructor_id <span title='Null on delete:&#10;Foreign key to parent set to NULL when parent deleted'>N</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="course_virtual_classrooms.updater_id references users.id via fk_course_virtual_classrooms_updater_id">
+						<a href='course_virtual_classrooms.html'>course_virtual_classrooms</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_course_virtual_classrooms_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="courses.creator_id references users.id via fk_courses_creator_id">
+						<a href='courses.html'>courses</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_courses_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="courses.updater_id references users.id via fk_courses_updater_id">
+						<a href='courses.html'>courses</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_courses_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="generic_announcements.creator_id references users.id via fk_generic_announcements_creator_id">
+						<a href='generic_announcements.html'>generic_announcements</a><span class='relatedKey'>.creator_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_generic_announcements_creator_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="generic_announcements.updater_id references users.id via fk_generic_announcements_updater_id">
+						<a href='generic_announcements.html'>generic_announcements</a><span class='relatedKey'>.updater_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_generic_announcements_updater_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="instance_user_role_requests.user_id references users.id via fk_instance_user_role_requests_user_id">
+						<a href='instance_user_role_requests.html'>instance_user_role_requests</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_instance_user_role_requests_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="instance_users.user_id references users.id via fk_instance_users_user_id">
+						<a href='instance_users.html'>instance_users</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_instance_users_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="user_emails.user_id references users.id via fk_user_emails_user_id">
+						<a href='user_emails.html'>user_emails</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_user_emails_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="user_identities.user_id references users.id via fk_user_identities_user_id">
+						<a href='user_identities.html'>user_identities</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_user_identities_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				   <tr>
+					<td title="user_notifications.user_id references users.id via fk_user_notifications_user_id">
+						<a href='user_notifications.html'>user_notifications</a><span class='relatedKey'>.user_id</span>
+					</td>
+					<td class="constraint detail">
+						fk_user_notifications_user_id <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="name">name</span></td>
+				 <td>varchar</td>
+				 <td>255</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="role">role</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="time_zone">time_zone</span></td>
+				 <td>varchar</td>
+				 <td>255</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="profile_photo">profile_photo</span></td>
+				 <td>text</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="encrypted_password">encrypted_password</span></td>
+				 <td>varchar</td>
+				 <td>255</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>&#39;&#39;::character varying</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td class='indexedColumn' title='Indexed'><i class='fa fa-sitemap fa-rotate-120' style='padding-right: 5px;'></i><span id="reset_password_token">reset_password_token</span></td>
+				 <td>varchar</td>
+				 <td>255</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="reset_password_sent_at">reset_password_sent_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="remember_created_at">remember_created_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="sign_in_count">sign_in_count</span></td>
+				 <td>int4</td>
+				 <td>10</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>0</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="current_sign_in_at">current_sign_in_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="last_sign_in_at">last_sign_in_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="current_sign_in_ip">current_sign_in_ip</span></td>
+				 <td>inet</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="last_sign_in_ip">last_sign_in_ip</span></td>
+				 <td>inet</td>
+				 <td>2147483647</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="created_at">created_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+				<tr>
+				 <td><span id="updated_at">updated_at</span></td>
+				 <td>timestamp</td>
+				 <td>29,6</td>
+				 <td title=''></td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
+								</tbody>
+				</table>
+				<p title='16 columns'>Table contained <span id="recordNumber">4</span> rows<p/>
+			</div>
+		</div>
+		<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-sitemap"></i>
+
+              <h3 id="Indexes" class="box-title">Indexes</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">
+				<table id="indexes_table" class="table table-bordered table-striped dataTable" role="grid">
+				<thead>
+				 <tr>
+				  <th>Constraint Name</th>
+				  <th>Type</th>
+				  <th>Sort</th>
+				  <th>Column(s)</th>
+				 </tr>
+				</thead>
+				<tbody>
+				 <tr>
+				  <td class='primaryKey' title='Primary Key'><i class='icon ion-key iconkey'></i> users_pkey</td>
+				  <td>Primary key</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>id</td>
+				 </tr>				 
+				 <tr>
+				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> index_users_on_reset_password_token</td>
+				  <td>Must be unique</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>reset_password_token</td>
+				 </tr>				 
+				</tbody>
+				</table>   			  
+			</div><!-- /.box-body -->
+		</div>
+				<div class="box box-primary">		
+			<div class="box-header with-border">
+              <i class="fa fa-code-fork"></i>
+
+              <h3 id="Relationships" class="box-title">Relationships</h3>
+
+              <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
+              </div>
+            </div>	
+			<div class="box-body">	
+			<div class="nav-tabs-custom" style="cursor: move;">
+            <!-- Tabs within a box -->
+			<h5>Close relationships within degrees of separation</h5>
+            <ul class="nav nav-tabs pull-left ui-sortable-handle">
+			  			              <li class="active"><a href="#oneDegreeImg-chart" data-toggle="tab" aria-expanded="true">One</a></li>			  			 
+			  			              <li class=""><a href="#twodegreesDegreeImg-chart" data-toggle="tab" aria-expanded="true">Two degrees</a></li>			  			 
+            </ul>
+            <div class="tab-content no-padding">            
+				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
+<area shape="rect" id="node1" href="course_achievements.html" title="course_achievements" alt="" coords="897,5,1113,211">
+<area shape="rect" id="node2" href="courses.html" title="courses" alt="" coords="506,1645,678,1880">
+<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="5,3245,340,3784">
+<area shape="rect" id="node4" href="course_announcements.html" title="course_announcements" alt="" coords="885,228,1125,433">
+<area shape="rect" id="node5" href="course_assessment_answer_scribing_scribbles.html" title="course_assessment_answer_scribing_scribbles" alt="" coords="384,712,800,888">
+<area shape="rect" id="node6" href="course_assessment_answers.html" title="course_assessment_answers" alt="" coords="2227,3527,2501,3791">
+<area shape="rect" id="node7" href="course_assessment_questions.html" title="course_assessment_questions" alt="" coords="449,3540,735,3775">
+<area shape="rect" id="node8" href="course_assessment_submissions.html" title="course_assessment_submissions" alt="" coords="1875,3232,2183,3467">
+<area shape="rect" id="node12" href="course_assessments.html" title="course_assessments" alt="" coords="1574,2679,1829,2884">
+<area shape="rect" id="node9" href="course_assessment_categories.html" title="course_assessment_categories" alt="" coords="859,1085,1150,1291">
+<area shape="rect" id="node10" href="course_assessment_skill_branches.html" title="course_assessment_skill_branches" alt="" coords="844,791,1165,996">
+<area shape="rect" id="node11" href="course_assessment_skills.html" title="course_assessment_skills" alt="" coords="1243,889,1494,1124">
+<area shape="rect" id="node13" href="course_assessment_tabs.html" title="course_assessment_tabs" alt="" coords="1247,1173,1491,1379">
+<area shape="rect" id="node14" href="course_conditions.html" title="course_conditions" alt="" coords="909,451,1100,773">
+<area shape="rect" id="node15" href="course_discussion_post_votes.html" title="course_discussion_post_votes" alt="" coords="861,2647,1148,2852">
+<area shape="rect" id="node16" href="course_discussion_posts.html" title="course_discussion_posts" alt="" coords="469,2588,715,2823">
+<area shape="rect" id="node17" href="course_discussion_topic_subscriptions.html" title="course_discussion_topic_subscriptions" alt="" coords="415,2117,769,2269">
+<area shape="rect" id="node18" href="course_enrol_requests.html" title="course_enrol_requests" alt="" coords="892,1488,1117,1664">
+<area shape="rect" id="node19" href="course_experience_points_records.html" title="course_experience_points_records" alt="" coords="1209,1396,1528,1689">
+<area shape="rect" id="node20" href="course_users.html" title="course_users" alt="" coords="898,1717,1111,1981">
+<area shape="rect" id="node21" href="course_forum_subscriptions.html" title="course_forum_subscriptions" alt="" coords="1234,2327,1503,2479">
+<area shape="rect" id="node22" href="course_forums.html" title="course_forums" alt="" coords="923,2395,1087,2629">
+<area shape="rect" id="node23" href="course_forum_topic_views.html" title="course_forum_topic_views" alt="" coords="1574,2984,1829,3160">
+<area shape="rect" id="node24" href="course_forum_topics.html" title="course_forum_topics" alt="" coords="1263,2949,1475,3184">
+<area shape="rect" id="node25" href="course_group_users.html" title="course_group_users" alt="" coords="1265,2055,1472,2289">
+<area shape="rect" id="node26" href="course_groups.html" title="course_groups" alt="" coords="923,2035,1087,2269">
+<area shape="rect" id="node27" href="course_lesson_plan_items.html" title="course_lesson_plan_items" alt="" coords="878,3756,1131,4020">
+<area shape="rect" id="node28" href="course_lesson_plan_todos.html" title="course_lesson_plan_todos" alt="" coords="1241,3943,1496,4177">
+<area shape="rect" id="node29" href="course_material_folders.html" title="course_material_folders" alt="" coords="888,4145,1121,4439">
+<area shape="rect" id="node30" href="course_materials.html" title="course_materials" alt="" coords="1279,4357,1459,4563">
+<area shape="rect" id="node31" href="course_survey_answers.html" title="course_survey_answers" alt="" coords="1251,4593,1486,4828">
+<area shape="rect" id="node32" href="course_survey_questions.html" title="course_survey_questions" alt="" coords="469,4297,715,4503">
+<area shape="rect" id="node33" href="course_survey_responses.html" title="course_survey_responses" alt="" coords="879,4564,1130,4769">
+<area shape="rect" id="node34" href="course_surveys.html" title="course_surveys" alt="" coords="465,4520,719,4696">
+<area shape="rect" id="node35" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="888,2941,1121,3235">
+<area shape="rect" id="node36" href="course_video_sessions.html" title="course_video_sessions" alt="" coords="1914,5127,2143,5332">
+<area shape="rect" id="node37" href="course_video_submissions.html" title="course_video_submissions" alt="" coords="1572,4869,1831,5075">
+<area shape="rect" id="node38" href="course_videos.html" title="course_videos" alt="" coords="1288,5003,1449,5208">
+<area shape="rect" id="node39" href="course_video_tabs.html" title="course_video_tabs" alt="" coords="908,4931,1101,5136">
+<area shape="rect" id="node40" href="course_video_topics.html" title="course_video_topics" alt="" coords="1597,5297,1805,5503">
+<area shape="rect" id="node41" href="course_virtual_classrooms.html" title="course_virtual_classrooms" alt="" coords="877,3396,1133,3631">
+<area shape="rect" id="node42" href="generic_announcements.html" title="generic_announcements" alt="" coords="473,5369,711,5575">
+<area shape="rect" id="node43" href="instance_user_role_requests.html" title="instance_user_role_requests" alt="" coords="457,5592,727,5768">
+<area shape="rect" id="node44" href="instance_users.html" title="instance_users" alt="" coords="509,5785,675,5961">
+<area shape="rect" id="node45" href="user_emails.html" title="user_emails" alt="" coords="487,5979,697,6184">
+<area shape="rect" id="node46" href="user_identities.html" title="user_identities" alt="" coords="511,6201,673,6407">
+<area shape="rect" id="node47" href="user_notifications.html" title="user_notifications" alt="" coords="499,6424,685,6600">
+</map>
+
+					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/users.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
+					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
+<area shape="rect" id="node1" href="course_achievements.html" title="course_achievements" alt="" coords="897,1161,1113,1367">
+<area shape="rect" id="node2" href="courses.html" title="courses" alt="" coords="506,2735,678,2969">
+<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="5,3759,340,4297">
+<area shape="rect" id="node61" href="instances.html" title="instances" alt="" coords="111,6463,234,6551">
+<area shape="rect" id="node4" href="course_announcements.html" title="course_announcements" alt="" coords="885,795,1125,1000">
+<area shape="rect" id="node5" href="course_assessment_answer_auto_gradings.html" title="course_assessment_answer_auto_gradings" alt="" coords="2704,4596,3007,4684">
+<area shape="rect" id="node6" href="course_assessment_answers.html" title="course_assessment_answers" alt="" coords="2354,4593,2629,4857">
+<area shape="rect" id="node9" href="course_assessment_questions.html" title="course_assessment_questions" alt="" coords="1624,4645,1911,4880">
+<area shape="rect" id="node10" href="course_assessment_submissions.html" title="course_assessment_submissions" alt="" coords="1971,4352,2279,4587">
+<area shape="rect" id="node7" href="course_assessment_answer_scribing_scribbles.html" title="course_assessment_answer_scribing_scribbles" alt="" coords="384,5,800,181">
+<area shape="rect" id="node8" href="course_assessment_answer_scribings.html" title="course_assessment_answer_scribings" alt="" coords="35,37,311,125">
+<area shape="rect" id="node18" href="course_assessments.html" title="course_assessments" alt="" coords="1640,929,1895,1135">
+<area shape="rect" id="node11" href="course_assessment_categories.html" title="course_assessment_categories" alt="" coords="859,536,1150,741">
+<area shape="rect" id="node12" href="course_assessment_skill_branches.html" title="course_assessment_skill_branches" alt="" coords="844,4933,1165,5139">
+<area shape="rect" id="node13" href="course_assessment_skills.html" title="course_assessment_skills" alt="" coords="1261,4933,1512,5168">
+<area shape="rect" id="node14" href="course_assessment_skills_question_assessments.html" title="course_assessment_skills_question_assessments" alt="" coords="2323,4892,2660,4980">
+<area shape="rect" id="node15" href="course_question_assessments.html" title="course_question_assessments" alt="" coords="2007,4645,2242,4733">
+<area shape="rect" id="node16" href="course_assessment_submission_logs.html" title="course_assessment_submission_logs" alt="" coords="2355,4355,2627,4443">
+<area shape="rect" id="node17" href="course_assessment_submission_questions.html" title="course_assessment_submission_questions" alt="" coords="2341,4471,2642,4559">
+<area shape="rect" id="node19" href="course_assessment_tabs.html" title="course_assessment_tabs" alt="" coords="1265,745,1509,951">
+<area shape="rect" id="node20" href="course_condition_achievements.html" title="course_condition_achievements" alt="" coords="1266,1237,1507,1325">
+<area shape="rect" id="node21" href="course_condition_assessments.html" title="course_condition_assessments" alt="" coords="2005,932,2244,1020">
+<area shape="rect" id="node22" href="course_conditions.html" title="course_conditions" alt="" coords="909,1420,1100,1743">
+<area shape="rect" id="node23" href="course_discussion_post_votes.html" title="course_discussion_post_votes" alt="" coords="1624,1669,1911,1875">
+<area shape="rect" id="node24" href="course_discussion_posts.html" title="course_discussion_posts" alt="" coords="1264,1516,1509,1751">
+<area shape="rect" id="node25" href="course_discussion_topics.html" title="course_discussion_topics" alt="" coords="900,1832,1109,1920">
+<area shape="rect" id="node26" href="course_discussion_topic_subscriptions.html" title="course_discussion_topic_subscriptions" alt="" coords="1209,1804,1564,1956">
+<area shape="rect" id="node27" href="course_enrol_requests.html" title="course_enrol_requests" alt="" coords="892,2225,1117,2401">
+<area shape="rect" id="node28" href="course_experience_points_records.html" title="course_experience_points_records" alt="" coords="1608,2136,1927,2429">
+<area shape="rect" id="node29" href="course_users.html" title="course_users" alt="" coords="1280,2009,1493,2273">
+<area shape="rect" id="node43" href="course_reference_timelines.html" title="course_reference_timelines" alt="" coords="896,2560,1113,2648">
+<area shape="rect" id="node30" href="course_forum_subscriptions.html" title="course_forum_subscriptions" alt="" coords="1252,2552,1521,2704">
+<area shape="rect" id="node31" href="course_forums.html" title="course_forums" alt="" coords="923,2771,1087,3005">
+<area shape="rect" id="node32" href="course_forum_topic_views.html" title="course_forum_topic_views" alt="" coords="1640,3225,1895,3401">
+<area shape="rect" id="node33" href="course_forum_topics.html" title="course_forum_topics" alt="" coords="1281,3101,1493,3336">
+<area shape="rect" id="node34" href="course_group_users.html" title="course_group_users" alt="" coords="1664,3605,1871,3840">
+<area shape="rect" id="node35" href="course_groups.html" title="course_groups" alt="" coords="923,3513,1087,3748">
+<area shape="rect" id="node36" href="course_lesson_plan_event_materials.html" title="course_lesson_plan_event_materials" alt="" coords="1634,4052,1901,4140">
+<area shape="rect" id="node37" href="course_materials.html" title="course_materials" alt="" coords="1297,4049,1477,4255">
+<area shape="rect" id="node41" href="course_material_folders.html" title="course_material_folders" alt="" coords="888,3837,1121,4131">
+<area shape="rect" id="node38" href="course_lesson_plan_items.html" title="course_lesson_plan_items" alt="" coords="878,4508,1131,4772">
+<area shape="rect" id="node39" href="course_lesson_plan_todos.html" title="course_lesson_plan_todos" alt="" coords="1259,5307,1514,5541">
+<area shape="rect" id="node40" href="course_levels.html" title="course_levels" alt="" coords="933,2665,1077,2753">
+<area shape="rect" id="node42" href="course_notifications.html" title="course_notifications" alt="" coords="915,2455,1094,2543">
+<area shape="rect" id="node44" href="course_reference_times.html" title="course_reference_times" alt="" coords="1288,3365,1485,3453">
+<area shape="rect" id="node45" href="course_survey_answer_options.html" title="course_survey_answer_options" alt="" coords="2005,5557,2244,5645">
+<area shape="rect" id="node46" href="course_survey_answers.html" title="course_survey_answers" alt="" coords="1650,5431,1885,5665">
+<area shape="rect" id="node47" href="course_survey_question_options.html" title="course_survey_question_options" alt="" coords="1644,5683,1891,5771">
+<area shape="rect" id="node48" href="course_survey_questions.html" title="course_survey_questions" alt="" coords="1263,5631,1510,5836">
+<area shape="rect" id="node49" href="course_survey_responses.html" title="course_survey_responses" alt="" coords="879,5228,1130,5433">
+<area shape="rect" id="node50" href="course_survey_sections.html" title="course_survey_sections" alt="" coords="905,5595,1105,5683">
+<area shape="rect" id="node51" href="course_surveys.html" title="course_surveys" alt="" coords="465,5293,719,5469">
+<area shape="rect" id="node52" href="course_user_achievements.html" title="course_user_achievements" alt="" coords="1659,1952,1875,2040">
+<area shape="rect" id="node53" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="888,3131,1121,3424">
+<area shape="rect" id="node54" href="course_video_events.html" title="course_video_events" alt="" coords="2400,6151,2583,6239">
+<area shape="rect" id="node55" href="course_video_sessions.html" title="course_video_sessions" alt="" coords="2010,6148,2239,6353">
+<area shape="rect" id="node56" href="course_video_submissions.html" title="course_video_submissions" alt="" coords="1638,5795,1897,6000">
+<area shape="rect" id="node57" href="course_videos.html" title="course_videos" alt="" coords="1306,5952,1467,6157">
+<area shape="rect" id="node58" href="course_video_tabs.html" title="course_video_tabs" alt="" coords="908,5880,1101,6085">
+<area shape="rect" id="node59" href="course_video_topics.html" title="course_video_topics" alt="" coords="1663,6024,1871,6229">
+<area shape="rect" id="node60" href="course_virtual_classrooms.html" title="course_virtual_classrooms" alt="" coords="877,4184,1133,4419">
+<area shape="rect" id="node62" href="generic_announcements.html" title="generic_announcements" alt="" coords="473,6319,711,6524">
+<area shape="rect" id="node63" href="instance_user_role_requests.html" title="instance_user_role_requests" alt="" coords="457,6735,727,6911">
+<area shape="rect" id="node64" href="instance_users.html" title="instance_users" alt="" coords="509,6541,675,6717">
+<area shape="rect" id="node65" href="user_emails.html" title="user_emails" alt="" coords="487,235,697,440">
+<area shape="rect" id="node66" href="user_identities.html" title="user_identities" alt="" coords="511,457,673,663">
+<area shape="rect" id="node67" href="user_notifications.html" title="user_notifications" alt="" coords="499,680,685,856">
+</map>
+
+					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/users.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
+				</div>
+			  			</div>
+			</div>
+		  </div><!-- /.box-body -->
+		</div>
+	      </section>
+    
+  </div>
+  <!-- /.content-wrapper -->
+  <footer class="main-footer">
+    <div>
+      <div class="pull-right hidden-xs">
+        <a href="https://github.com/schemaspy/schemaspy" title="GitHub for SchemaSpy"><i class="fa fa-github-square fa-2x"></i></a>
+        <a href="http://stackoverflow.com/questions/tagged/schemaspy" title="StackOverflow for SchemaSpy"><i class="fa fa-stack-overflow fa-2x"></i></a>
+      </div>
+      <strong>Generated by <a href="http://schemaspy.org/" class="logo-text"><i class="fa fa-database"></i> SchemaSpy 6.0.0-rc2</a></strong>
+    </div>
+    <!-- /.container -->
+  </footer>
+</div>
+<!-- ./wrapper -->
+
+<!-- jQuery 2.2.3 -->
+<script src="../bower/admin-lte/plugins/jQuery/jquery-2.2.3.min.js"></script>
+<script src="../bower/admin-lte/plugins/jQueryUI/jquery-ui.min.js"></script>
+<!-- Bootstrap 3.3.5 -->
+<script src="../bower/admin-lte/bootstrap/js/bootstrap.min.js"></script>
+<!-- DataTables -->
+<script src="../bower/datatables.net/jquery.dataTables.min.js"></script>
+<script src="../bower/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/dataTables.buttons.min.js"></script>
+<script src="../bower/datatables.net-buttons-bs/js/buttons.bootstrap.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.html5.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.print.min.js"></script>
+<script src="../bower/datatables.net-buttons/buttons.colVis.min.js"></script>
+
+<!-- SlimScroll -->
+<script src="../bower/admin-lte/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+<!-- FastClick -->
+<script src="../bower/admin-lte/plugins/fastclick/fastclick.js"></script>
+<!-- Salvattore -->
+<script src="../bower/salvattore/salvattore.min.js"></script>
+<!-- AnchorJS -->
+<script src="../bower/anchor-js/anchor.min.js"></script>
+<!-- CodeMirror -->
+<script src="../bower/codemirror/codemirror.js"></script>
+<script src="../bower/codemirror/sql.js"></script>
+<!-- AdminLTE App -->
+<script src="../bower/admin-lte/dist/js/app.min.js"></script>
+<script src="table.js"></script>
+<script src="../schemaSpy.js"></script>
+</body>
+</html>
