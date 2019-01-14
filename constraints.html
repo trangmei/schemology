@@ -82,7 +82,7 @@
 		<div class="box box-primary">
 			<div class="box-header with-border">
 			  <i class="ion ion-key"></i>
-              <h3 class="box-title">177 Foreign Key Constraints</h3>
+              <h3 class="box-title">182 Foreign Key Constraints</h3>
               <div class="box-tools pull-right">
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
@@ -165,6 +165,28 @@
 				  </table>				 
 				 </td>	
 				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_rails_1114147de5</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_video_submission_statistics.html'>course_video_submission_statistics</a><span>.submission_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_video_submissions.html'>course_video_submissions</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Cascade on delete:&#10;Deletion of parent deletes child'>Cascade on delete</span></td>
 				</tr>
 				<tr>
 				 <td>fk_course_assessment_submissions_publisher_id</td>
@@ -319,6 +341,28 @@
 				  </table>				 
 				 </td>	
 				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_rails_70ce8ff88d</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_video_statistics.html'>course_video_statistics</a><span>.video_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_videos.html'>course_videos</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Cascade on delete:&#10;Deletion of parent deletes child'>Cascade on delete</span></td>
 				</tr>
 				<tr>
 				 <td>fk_course_assessment_answer_auto_gradings_answer_id</td>
@@ -2345,6 +2389,50 @@
 				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
 				</tr>
 				<tr>
+				 <td>fk_rails_978dab8490</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_personal_times.html'>course_personal_times</a><span>.lesson_plan_item_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_lesson_plan_items.html'>course_lesson_plan_items</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_rails_095e82bc2e</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_personal_times.html'>course_personal_times</a><span>.course_user_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_users.html'>course_users</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
 				 <td>fk_course_experience_points_records_creator_id</td>
 				 <td>
 				  <table border='0' cellspacing='0' cellpadding='0'>
@@ -2499,6 +2587,72 @@
 				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
 				</tr>
 				<tr>
+				 <td>fk_course_survey_responses_updater_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.updater_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/users.html'>users</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_course_survey_responses_survey_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.survey_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_surveys.html'>course_surveys</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_course_survey_responses_creator_id</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.creator_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/users.html'>users</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
 				 <td>fk_rails_333f5f5ccf</td>
 				 <td>
 				  <table border='0' cellspacing='0' cellpadding='0'>
@@ -2593,72 +2747,6 @@
 				   <tr>
 					<td>
 						<a href='tables/course_users.html'>course_users</a><span>.updater_id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>			 
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/users.html'>users</a><span>.id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>	
-				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
-				</tr>
-				<tr>
-				 <td>fk_course_survey_responses_updater_id</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.updater_id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>			 
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/users.html'>users</a><span>.id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>	
-				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
-				</tr>
-				<tr>
-				 <td>fk_course_survey_responses_survey_id</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.survey_id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>			 
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/course_surveys.html'>course_surveys</a><span>.id</span>
-					</td>
-				   </tr>
-				  </table>				 
-				 </td>	
-				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
-				</tr>
-				<tr>
-				 <td>fk_course_survey_responses_creator_id</td>
-				 <td>
-				  <table border='0' cellspacing='0' cellpadding='0'>
-				   <tr>
-					<td>
-						<a href='tables/course_survey_responses.html'>course_survey_responses</a><span>.creator_id</span>
 					</td>
 				   </tr>
 				  </table>				 
@@ -2844,6 +2932,28 @@
 				   <tr>
 					<td>
 						<a href='tables/users.html'>users</a><span>.id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>	
+				 <td><span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>Restrict delete</span></td>
+				</tr>
+				<tr>
+				 <td>fk_rails_b14cc98aaf</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_user_invitations.html'>course_user_invitations</a><span>.group_id</span>
+					</td>
+				   </tr>
+				  </table>				 
+				 </td>			 
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td>
+						<a href='tables/course_groups.html'>course_groups</a><span>.id</span>
 					</td>
 				   </tr>
 				  </table>				 

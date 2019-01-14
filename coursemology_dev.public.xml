@@ -1279,6 +1279,7 @@
       <table name="course_groups" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('course_groups_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="group_id" foreignKey="fk_course_group_users_course_group_id" implied="false" onDeleteCascade="false" schema="public" table="course_group_users"/>
+            <child column="group_id" foreignKey="fk_rails_b14cc98aaf" implied="false" onDeleteCascade="false" schema="public" table="course_user_invitations"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="course_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="fk_course_groups_course_id" implied="false" onDeleteCascade="false" schema="public" table="courses"/>
@@ -1344,6 +1345,7 @@
       <table name="course_lesson_plan_items" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('course_lesson_plan_items_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="item_id" foreignKey="fk_course_lesson_plan_todos_item_id" implied="false" onDeleteCascade="false" schema="public" table="course_lesson_plan_todos"/>
+            <child column="lesson_plan_item_id" foreignKey="fk_rails_978dab8490" implied="false" onDeleteCascade="false" schema="public" table="course_personal_times"/>
             <child column="lesson_plan_item_id" foreignKey="fk_rails_7d565ddd8a" implied="false" onDeleteCascade="false" schema="public" table="course_reference_times"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="actable_id" nullable="true" remarks="" size="10" type="int4"/>
@@ -1367,6 +1369,8 @@
          <column autoUpdated="false" digits="6" id="13" name="updated_at" nullable="false" remarks="" size="29" type="timestamp"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="14" name="triggers_recomputation" nullable="false" remarks="" size="1" type="bool"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="15" name="movable" nullable="false" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="16" name="has_personal_times" nullable="false" remarks="" size="1" type="bool"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="17" name="affects_personal_times" nullable="false" remarks="" size="1" type="bool"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="course_lesson_plan_items_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -1557,6 +1561,29 @@
          </index>
          <index name="index_course_notifications_on_course_id" unique="false">
             <column ascending="true" name="course_id"/>
+         </index>
+      </table>
+      <table name="course_personal_times" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('course_personal_times_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
+         <column autoUpdated="false" digits="0" id="1" name="course_user_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rails_095e82bc2e" implied="false" onDeleteCascade="false" schema="public" table="course_users"/>
+         </column>
+         <column autoUpdated="false" digits="0" id="2" name="lesson_plan_item_id" nullable="false" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rails_978dab8490" implied="false" onDeleteCascade="false" schema="public" table="course_lesson_plan_items"/>
+         </column>
+         <column autoUpdated="false" digits="6" id="3" name="start_at" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="4" name="bonus_end_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="6" id="5" name="end_at" nullable="true" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="6" name="fixed" nullable="false" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="course_personal_times_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_course_personal_times_on_course_user_id" unique="false">
+            <column ascending="true" name="course_user_id"/>
+         </index>
+         <index name="index_course_personal_times_on_lesson_plan_item_id" unique="false">
+            <column ascending="true" name="lesson_plan_item_id"/>
          </index>
       </table>
       <table name="course_question_assessments" numRows="0" remarks="" schema="public" type="TABLE">
@@ -1866,6 +1893,9 @@
          </column>
          <column autoUpdated="false" digits="6" id="12" name="created_at" nullable="false" remarks="" size="29" type="timestamp"/>
          <column autoUpdated="false" digits="6" id="13" name="updated_at" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" digits="0" id="14" name="group_id" nullable="true" remarks="" size="19" type="int8">
+            <parent column="id" foreignKey="fk_rails_b14cc98aaf" implied="false" onDeleteCascade="false" schema="public" table="course_groups"/>
+         </column>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="course_user_invitations_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -1887,6 +1917,9 @@
             <column ascending="true" name="email"/>
          </index>
          <index name="index_course_user_invitations_on_email" unique="false"/>
+         <index name="index_course_user_invitations_on_group_id" unique="false">
+            <column ascending="true" name="group_id"/>
+         </index>
          <index name="index_course_user_invitations_on_invitation_key" unique="true">
             <column ascending="true" name="invitation_key"/>
          </index>
@@ -1895,6 +1928,7 @@
          <column autoUpdated="true" defaultValue="nextval('course_users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="course_user_id" foreignKey="fk_course_experience_points_records_course_user_id" implied="false" onDeleteCascade="false" schema="public" table="course_experience_points_records"/>
             <child column="course_user_id" foreignKey="fk_course_group_users_course_user_id" implied="false" onDeleteCascade="false" schema="public" table="course_group_users"/>
+            <child column="course_user_id" foreignKey="fk_rails_095e82bc2e" implied="false" onDeleteCascade="false" schema="public" table="course_personal_times"/>
             <child column="course_user_id" foreignKey="fk_course_user_achievements_course_user_id" implied="false" onDeleteCascade="false" schema="public" table="course_user_achievements"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="course_id" nullable="false" remarks="" size="10" type="int4">
@@ -1918,6 +1952,7 @@
          <column autoUpdated="false" digits="0" id="11" name="reference_timeline_id" nullable="true" remarks="" size="19" type="int8">
             <parent column="id" foreignKey="fk_rails_333f5f5ccf" implied="false" onDeleteCascade="false" schema="public" table="course_reference_timelines"/>
          </column>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="12" name="timeline_algorithm" nullable="false" remarks="" size="10" type="int4"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="course_users_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -1998,9 +2033,41 @@
             <column ascending="true" name="updater_id"/>
          </index>
       </table>
+      <table name="course_video_statistics" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('course_video_statistics_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
+         <column autoUpdated="false" digits="0" id="1" name="video_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_rails_70ce8ff88d" implied="false" onDeleteCascade="true" schema="public" table="course_videos"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'{}'::integer[]" digits="0" id="2" name="watch_freq" nullable="true" remarks="" size="10" type="_int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="percent_watched" nullable="false" remarks="" size="10" type="int4"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="4" name="cached" nullable="false" remarks="" size="1" type="bool"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="course_video_statistics_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_course_video_statistics_on_video_id" unique="false">
+            <column ascending="true" name="video_id"/>
+         </index>
+      </table>
+      <table name="course_video_submission_statistics" numRows="0" remarks="" schema="public" type="TABLE">
+         <column autoUpdated="true" defaultValue="nextval('course_video_submission_statistics_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
+         <column autoUpdated="false" digits="0" id="1" name="submission_id" nullable="false" remarks="" size="10" type="int4">
+            <parent column="id" foreignKey="fk_rails_1114147de5" implied="false" onDeleteCascade="true" schema="public" table="course_video_submissions"/>
+         </column>
+         <column autoUpdated="false" defaultValue="'{}'::integer[]" digits="0" id="2" name="watch_freq" nullable="true" remarks="" size="10" type="_int4"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="3" name="percent_watched" nullable="false" remarks="" size="10" type="int4"/>
+         <primaryKey column="id" sequenceNumberInPK="1"/>
+         <index name="course_video_submission_statistics_pkey" unique="true">
+            <column ascending="true" name="id"/>
+         </index>
+         <index name="index_course_video_submission_statistics_on_submission_id" unique="false">
+            <column ascending="true" name="submission_id"/>
+         </index>
+      </table>
       <table name="course_video_submissions" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('course_video_submissions_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="submission_id" foreignKey="fk_rails_e59b9a0016" implied="false" onDeleteCascade="false" schema="public" table="course_video_sessions"/>
+            <child column="submission_id" foreignKey="fk_rails_1114147de5" implied="false" onDeleteCascade="true" schema="public" table="course_video_submission_statistics"/>
          </column>
          <column autoUpdated="false" digits="0" id="1" name="video_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="fk_course_video_submissions_video_id" implied="false" onDeleteCascade="false" schema="public" table="course_videos"/>
@@ -2090,6 +2157,7 @@
       </table>
       <table name="course_videos" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('course_videos_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
+            <child column="video_id" foreignKey="fk_rails_70ce8ff88d" implied="false" onDeleteCascade="true" schema="public" table="course_video_statistics"/>
             <child column="video_id" foreignKey="fk_course_video_submissions_video_id" implied="false" onDeleteCascade="false" schema="public" table="course_video_submissions"/>
             <child column="video_id" foreignKey="fk_course_video_topics_video_id" implied="false" onDeleteCascade="false" schema="public" table="course_video_topics"/>
          </column>
@@ -2105,6 +2173,7 @@
          </column>
          <column autoUpdated="false" digits="6" id="5" name="created_at" nullable="false" remarks="" size="29" type="timestamp"/>
          <column autoUpdated="false" digits="6" id="6" name="updated_at" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="0" digits="0" id="7" name="duration" nullable="false" remarks="" size="10" type="int4"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="course_videos_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -2203,6 +2272,7 @@
          </column>
          <column autoUpdated="false" digits="6" id="15" name="created_at" nullable="false" remarks="" size="29" type="timestamp"/>
          <column autoUpdated="false" digits="6" id="16" name="updated_at" nullable="false" remarks="" size="29" type="timestamp"/>
+         <column autoUpdated="false" defaultValue="false" digits="0" id="17" name="show_personalized_timeline_features" nullable="false" remarks="" size="1" type="bool"/>
          <primaryKey column="id" sequenceNumberInPK="1"/>
          <index name="courses_pkey" unique="true">
             <column ascending="true" name="id"/>
@@ -2277,7 +2347,7 @@
             <column ascending="true" name="user_id"/>
          </index>
       </table>
-      <table name="instance_users" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="instance_users" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('instance_users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
          <column autoUpdated="false" digits="0" id="1" name="instance_id" nullable="false" remarks="" size="10" type="int4">
             <parent column="id" foreignKey="fk_instance_users_instance_id" implied="false" onDeleteCascade="false" schema="public" table="instances"/>
@@ -2301,7 +2371,7 @@
             <column ascending="true" name="user_id"/>
          </index>
       </table>
-      <table name="instances" numRows="1" remarks="" schema="public" type="TABLE">
+      <table name="instances" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('instances_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="instance_id" foreignKey="fk_courses_instance_id" implied="false" onDeleteCascade="false" schema="public" table="courses"/>
             <child column="instance_id" foreignKey="fk_generic_announcements_instance_id" implied="false" onDeleteCascade="false" schema="public" table="generic_announcements"/>
@@ -2332,7 +2402,7 @@
             <column ascending="true" name="id"/>
          </index>
       </table>
-      <table name="polyglot_languages" numRows="7" remarks="" schema="public" type="TABLE">
+      <table name="polyglot_languages" numRows="8" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('polyglot_languages_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="language_id" foreignKey="fk_course_assessment_question_programming_language_id" implied="false" onDeleteCascade="false" schema="public" table="course_assessment_question_programming"/>
             <child column="parent_id" foreignKey="fk_polyglot_languages_parent_id" implied="false" onDeleteCascade="false" schema="public" table="polyglot_languages"/>
@@ -2351,7 +2421,7 @@
          </index>
          <index name="index_polyglot_languages_on_name" unique="true"/>
       </table>
-      <table name="read_marks" numRows="24" remarks="" schema="public" type="TABLE">
+      <table name="read_marks" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('read_marks_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
          <column autoUpdated="false" digits="0" id="1" name="readable_id" nullable="true" remarks="" size="10" type="int4"/>
          <column autoUpdated="false" digits="0" id="2" name="readable_type" nullable="false" remarks="" size="255" type="varchar"/>
@@ -2369,14 +2439,14 @@
             <column ascending="true" name="readable_id"/>
          </index>
       </table>
-      <table name="schema_migrations" numRows="208" remarks="" schema="public" type="TABLE">
+      <table name="schema_migrations" numRows="214" remarks="" schema="public" type="TABLE">
          <column autoUpdated="false" digits="0" id="0" name="version" nullable="false" remarks="" size="2147483647" type="varchar"/>
          <primaryKey column="version" sequenceNumberInPK="1"/>
          <index name="schema_migrations_pkey" unique="true">
             <column ascending="true" name="version"/>
          </index>
       </table>
-      <table name="user_emails" numRows="2" remarks="" schema="public" type="TABLE">
+      <table name="user_emails" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('user_emails_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial"/>
          <column autoUpdated="false" defaultValue="false" digits="0" id="1" name="primary" nullable="false" remarks="" size="1" type="bool"/>
          <column autoUpdated="false" digits="0" id="2" name="user_id" nullable="true" remarks="" size="10" type="int4">
@@ -2441,7 +2511,7 @@
             <column ascending="true" name="user_id"/>
          </index>
       </table>
-      <table name="users" numRows="4" remarks="" schema="public" type="TABLE">
+      <table name="users" numRows="0" remarks="" schema="public" type="TABLE">
          <column autoUpdated="true" defaultValue="nextval('users_id_seq'::regclass)" digits="0" id="0" name="id" nullable="false" remarks="" size="19" type="bigserial">
             <child column="creator_id" foreignKey="fk_course_achievements_creator_id" implied="false" onDeleteCascade="false" schema="public" table="course_achievements"/>
             <child column="updater_id" foreignKey="fk_course_achievements_updater_id" implied="false" onDeleteCascade="false" schema="public" table="course_achievements"/>

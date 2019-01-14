@@ -375,9 +375,34 @@
 				 </td>
 				 <td></td>
 				</tr>
+				<tr>
+				 <td class='foreignKey' title='Foreign Key'><i class='icon ion-key iconkey' style='padding-left: 5px;'></i><span id="group_id">group_id</span></td>
+				 <td>int8</td>
+				 <td>19</td>
+				 <td title='nullable'>√</td>
+				 <td title=''></td>
+				 <td>null</td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				  </table>				 
+				 </td>
+				 <td>
+				  <table border='0' cellspacing='0' cellpadding='0'>
+				   <tr>
+					<td title="course_user_invitations.group_id references course_groups.id via fk_rails_b14cc98aaf">
+						<a href='course_groups.html'>course_groups</a><span class='relatedKey'>.id</span>
+					</td>
+					<td class="constraint detail">
+						fk_rails_b14cc98aaf <span title='Restrict delete:&#10;Parent cannot be deleted if children exist'>R</span>
+					</td>
+				   </tr>
+				  </table>					 
+				 </td>
+				 <td></td>
+				</tr>
 								</tbody>
 				</table>
-				<p title='14 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
+				<p title='15 columns'>Table contained <span id="recordNumber">0</span> rows<p/>
 			</div>
 		</div>
 		<div class="box box-primary">		
@@ -446,6 +471,12 @@
 				  <td></td>
 				 </tr>				 
 				 <tr>
+				  <td title='Indexed'>index_course_user_invitations_on_group_id</td>
+				  <td>Performance</td>
+				  <td><span title='Ascending'>Asc</span></td>
+				  <td>group_id</td>
+				 </tr>				 
+				 <tr>
 				  <td class='uniqueKey' title='Unique Key'><i class='icon ion-key iconkey'></i> index_course_user_invitations_on_invitation_key</td>
 				  <td>Must be unique</td>
 				  <td><span title='Ascending'>Asc</span></td>
@@ -478,67 +509,68 @@
             <div class="tab-content no-padding">            
 				<div class="chart tab-pane active" id="oneDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="oneDegreeRelationshipsDiagram" name="oneDegreeRelationshipsDiagram">
-<area shape="rect" id="node1" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="501,5,827,485">
-<area shape="rect" id="node2" href="users.html" title="users" alt="" coords="5,261,241,408">
-<area shape="rect" id="node3" href="courses.html" title="courses" alt="" coords="285,49,457,284">
+<area shape="rect" id="node1" href="course_groups.html" title="course_groups" alt="" coords="667,475,831,709">
+<area shape="rect" id="node2" href="courses.html" title="courses" alt="" coords="285,407,623,641">
+<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="5,495,241,641">
+<area shape="rect" id="node4" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="875,5,1200,515">
 </map>
 
 					<a name='diagram'><img id='oneDegreeImg' src='../diagrams/course_user_invitations.1degree.png' usemap='#oneDegreeRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							
 				</div>
 				<div class="chart tab-pane " id="twodegreesDegreeImg-chart" style="position: relative; overflow-x:auto;">					
 					<map id="twoDegreesRelationshipsDiagram" name="twoDegreesRelationshipsDiagram">
-<area shape="rect" id="node1" href="course_achievements.html" title="course_achievements" alt="" coords="723,981,909,1069">
-<area shape="rect" id="node2" href="courses.html" title="courses" alt="" coords="361,2048,533,2282">
-<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="5,2165,241,2312">
-<area shape="rect" id="node46" href="instances.html" title="instances" alt="" coords="62,3678,185,3766">
-<area shape="rect" id="node4" href="course_announcements.html" title="course_announcements" alt="" coords="717,1086,915,1174">
-<area shape="rect" id="node5" href="course_assessment_answer_scribing_scribbles.html" title="course_assessment_answer_scribing_scribbles" alt="" coords="285,1401,609,1489">
-<area shape="rect" id="node6" href="course_assessment_answers.html" title="course_assessment_answers" alt="" coords="1941,1258,2168,1346">
-<area shape="rect" id="node7" href="course_assessment_questions.html" title="course_assessment_questions" alt="" coords="330,1698,565,1786">
-<area shape="rect" id="node8" href="course_assessment_submissions.html" title="course_assessment_submissions" alt="" coords="1648,892,1897,980">
-<area shape="rect" id="node12" href="course_assessments.html" title="course_assessments" alt="" coords="1385,1165,1567,1253">
-<area shape="rect" id="node9" href="course_assessment_categories.html" title="course_assessment_categories" alt="" coords="697,1332,935,1420">
-<area shape="rect" id="node10" href="course_assessment_skill_branches.html" title="course_assessment_skill_branches" alt="" coords="687,1577,945,1665">
-<area shape="rect" id="node11" href="course_assessment_skills.html" title="course_assessment_skills" alt="" coords="1058,1993,1269,2081">
-<area shape="rect" id="node13" href="course_assessment_tabs.html" title="course_assessment_tabs" alt="" coords="1061,1138,1266,1226">
-<area shape="rect" id="node14" href="course_conditions.html" title="course_conditions" alt="" coords="731,1682,901,1770">
-<area shape="rect" id="node15" href="course_discussion_post_votes.html" title="course_discussion_post_votes" alt="" coords="1359,1473,1593,1561">
-<area shape="rect" id="node16" href="course_discussion_posts.html" title="course_discussion_posts" alt="" coords="1060,1525,1267,1613">
-<area shape="rect" id="node17" href="course_discussion_topics.html" title="course_discussion_topics" alt="" coords="711,2140,921,2228">
-<area shape="rect" id="node18" href="course_discussion_topic_subscriptions.html" title="course_discussion_topic_subscriptions" alt="" coords="1023,2236,1304,2324">
-<area shape="rect" id="node19" href="course_enrol_requests.html" title="course_enrol_requests" alt="" coords="720,1788,912,1876">
-<area shape="rect" id="node20" href="course_experience_points_records.html" title="course_experience_points_records" alt="" coords="1348,2417,1604,2505">
-<area shape="rect" id="node21" href="course_users.html" title="course_users" alt="" coords="1092,2626,1235,2714">
-<area shape="rect" id="node34" href="course_reference_timelines.html" title="course_reference_timelines" alt="" coords="707,2245,925,2333">
-<area shape="rect" id="node22" href="course_forum_subscriptions.html" title="course_forum_subscriptions" alt="" coords="1052,2741,1275,2829">
-<area shape="rect" id="node23" href="course_forums.html" title="course_forums" alt="" coords="741,2716,891,2804">
-<area shape="rect" id="node24" href="course_forum_topic_views.html" title="course_forum_topic_views" alt="" coords="1369,3120,1583,3208">
-<area shape="rect" id="node25" href="course_forum_topics.html" title="course_forum_topics" alt="" coords="1072,3156,1255,3244">
-<area shape="rect" id="node26" href="course_group_users.html" title="course_group_users" alt="" coords="1386,2728,1566,2816">
-<area shape="rect" id="node27" href="course_groups.html" title="course_groups" alt="" coords="741,2542,891,2630">
-<area shape="rect" id="node28" href="course_lesson_plan_items.html" title="course_lesson_plan_items" alt="" coords="710,3014,922,3102">
-<area shape="rect" id="node29" href="course_lesson_plan_todos.html" title="course_lesson_plan_todos" alt="" coords="1057,3261,1270,3349">
-<area shape="rect" id="node30" href="course_levels.html" title="course_levels" alt="" coords="744,1929,888,2017">
-<area shape="rect" id="node31" href="course_material_folders.html" title="course_material_folders" alt="" coords="717,3156,915,3244">
-<area shape="rect" id="node32" href="course_materials.html" title="course_materials" alt="" coords="1083,3366,1244,3454">
-<area shape="rect" id="node33" href="course_notifications.html" title="course_notifications" alt="" coords="727,2034,905,2122">
-<area shape="rect" id="node35" href="course_survey_answers.html" title="course_survey_answers" alt="" coords="1064,3509,1263,3597">
-<area shape="rect" id="node36" href="course_survey_questions.html" title="course_survey_questions" alt="" coords="344,3312,551,3400">
-<area shape="rect" id="node37" href="course_survey_responses.html" title="course_survey_responses" alt="" coords="711,3469,921,3557">
-<area shape="rect" id="node38" href="course_surveys.html" title="course_surveys" alt="" coords="370,3469,525,3557">
-<area shape="rect" id="node39" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="653,258,979,738">
-<area shape="rect" id="node40" href="course_video_sessions.html" title="course_video_sessions" alt="" coords="1675,73,1871,161">
-<area shape="rect" id="node41" href="course_video_submissions.html" title="course_video_submissions" alt="" coords="1368,154,1584,242">
-<area shape="rect" id="node42" href="course_videos.html" title="course_videos" alt="" coords="1089,206,1237,294">
-<area shape="rect" id="node43" href="course_video_tabs.html" title="course_video_tabs" alt="" coords="731,756,901,844">
-<area shape="rect" id="node44" href="course_video_topics.html" title="course_video_topics" alt="" coords="1385,808,1567,896">
-<area shape="rect" id="node45" href="course_virtual_classrooms.html" title="course_virtual_classrooms" alt="" coords="709,2909,923,2997">
-<area shape="rect" id="node47" href="generic_announcements.html" title="generic_announcements" alt="" coords="347,3626,548,3714">
-<area shape="rect" id="node48" href="instance_user_role_requests.html" title="instance_user_role_requests" alt="" coords="335,3837,559,3925">
-<area shape="rect" id="node49" href="instance_users.html" title="instance_users" alt="" coords="371,3732,523,3820">
-<area shape="rect" id="node50" href="user_emails.html" title="user_emails" alt="" coords="380,981,515,1069">
-<area shape="rect" id="node51" href="user_identities.html" title="user_identities" alt="" coords="373,1086,522,1174">
-<area shape="rect" id="node52" href="user_notifications.html" title="user_notifications" alt="" coords="364,1192,531,1280">
+<area shape="rect" id="node1" href="course_achievements.html" title="course_achievements" alt="" coords="703,459,889,547">
+<area shape="rect" id="node2" href="courses.html" title="courses" alt="" coords="285,1945,623,2180">
+<area shape="rect" id="node3" href="users.html" title="users" alt="" coords="5,1853,241,2000">
+<area shape="rect" id="node46" href="instances.html" title="instances" alt="" coords="62,3793,185,3881">
+<area shape="rect" id="node4" href="course_announcements.html" title="course_announcements" alt="" coords="697,809,895,897">
+<area shape="rect" id="node5" href="course_assessment_answer_scribing_scribbles.html" title="course_assessment_answer_scribing_scribbles" alt="" coords="292,891,616,979">
+<area shape="rect" id="node6" href="course_assessment_answers.html" title="course_assessment_answers" alt="" coords="1932,877,2159,965">
+<area shape="rect" id="node7" href="course_assessment_questions.html" title="course_assessment_questions" alt="" coords="337,996,571,1084">
+<area shape="rect" id="node8" href="course_assessment_submissions.html" title="course_assessment_submissions" alt="" coords="1639,1087,1888,1175">
+<area shape="rect" id="node12" href="course_assessments.html" title="course_assessments" alt="" coords="1375,977,1558,1065">
+<area shape="rect" id="node9" href="course_assessment_categories.html" title="course_assessment_categories" alt="" coords="677,1123,915,1211">
+<area shape="rect" id="node10" href="course_assessment_skill_branches.html" title="course_assessment_skill_branches" alt="" coords="667,1489,925,1577">
+<area shape="rect" id="node11" href="course_assessment_skills.html" title="course_assessment_skills" alt="" coords="1027,1449,1237,1537">
+<area shape="rect" id="node13" href="course_assessment_tabs.html" title="course_assessment_tabs" alt="" coords="1029,1003,1235,1091">
+<area shape="rect" id="node14" href="course_conditions.html" title="course_conditions" alt="" coords="711,1332,881,1420">
+<area shape="rect" id="node15" href="course_discussion_post_votes.html" title="course_discussion_post_votes" alt="" coords="1349,1199,1584,1287">
+<area shape="rect" id="node16" href="course_discussion_posts.html" title="course_discussion_posts" alt="" coords="1029,1280,1235,1368">
+<area shape="rect" id="node17" href="course_discussion_topics.html" title="course_discussion_topics" alt="" coords="691,1772,901,1860">
+<area shape="rect" id="node18" href="course_discussion_topic_subscriptions.html" title="course_discussion_topic_subscriptions" alt="" coords="991,1684,1273,1772">
+<area shape="rect" id="node19" href="course_enrol_requests.html" title="course_enrol_requests" alt="" coords="700,1631,892,1719">
+<area shape="rect" id="node20" href="course_experience_points_records.html" title="course_experience_points_records" alt="" coords="1339,1856,1595,1944">
+<area shape="rect" id="node21" href="course_users.html" title="course_users" alt="" coords="1061,2276,1203,2364">
+<area shape="rect" id="node34" href="course_reference_timelines.html" title="course_reference_timelines" alt="" coords="687,2156,905,2244">
+<area shape="rect" id="node22" href="course_forum_subscriptions.html" title="course_forum_subscriptions" alt="" coords="1021,3016,1243,3104">
+<area shape="rect" id="node23" href="course_forums.html" title="course_forums" alt="" coords="721,2883,871,2971">
+<area shape="rect" id="node24" href="course_forum_topic_views.html" title="course_forum_topic_views" alt="" coords="1360,3196,1573,3284">
+<area shape="rect" id="node25" href="course_forum_topics.html" title="course_forum_topics" alt="" coords="1041,3232,1223,3320">
+<area shape="rect" id="node26" href="course_group_users.html" title="course_group_users" alt="" coords="1377,2372,1557,2460">
+<area shape="rect" id="node27" href="course_groups.html" title="course_groups" alt="" coords="714,2453,878,2688">
+<area shape="rect" id="node28" href="course_lesson_plan_items.html" title="course_lesson_plan_items" alt="" coords="690,3060,902,3148">
+<area shape="rect" id="node29" href="course_lesson_plan_todos.html" title="course_lesson_plan_todos" alt="" coords="1025,3337,1239,3425">
+<area shape="rect" id="node30" href="course_levels.html" title="course_levels" alt="" coords="724,2051,868,2139">
+<area shape="rect" id="node31" href="course_material_folders.html" title="course_material_folders" alt="" coords="697,3165,895,3253">
+<area shape="rect" id="node32" href="course_materials.html" title="course_materials" alt="" coords="1051,3443,1213,3531">
+<area shape="rect" id="node33" href="course_notifications.html" title="course_notifications" alt="" coords="707,1945,885,2033">
+<area shape="rect" id="node35" href="course_survey_answers.html" title="course_survey_answers" alt="" coords="1033,3555,1231,3643">
+<area shape="rect" id="node36" href="course_survey_questions.html" title="course_survey_questions" alt="" coords="351,3636,557,3724">
+<area shape="rect" id="node37" href="course_survey_responses.html" title="course_survey_responses" alt="" coords="691,3479,901,3567">
+<area shape="rect" id="node38" href="course_surveys.html" title="course_surveys" alt="" coords="377,3479,531,3567">
+<area shape="rect" id="node39" href="course_user_invitations.html" title="course_user_invitations" alt="" coords="969,2489,1295,2999">
+<area shape="rect" id="node40" href="course_video_sessions.html" title="course_video_sessions" alt="" coords="1665,116,1861,204">
+<area shape="rect" id="node41" href="course_video_submissions.html" title="course_video_submissions" alt="" coords="1359,197,1575,285">
+<area shape="rect" id="node42" href="course_videos.html" title="course_videos" alt="" coords="1058,249,1206,337">
+<area shape="rect" id="node43" href="course_video_tabs.html" title="course_video_tabs" alt="" coords="711,301,881,389">
+<area shape="rect" id="node44" href="course_video_topics.html" title="course_video_topics" alt="" coords="1376,377,1557,465">
+<area shape="rect" id="node45" href="course_virtual_classrooms.html" title="course_virtual_classrooms" alt="" coords="689,2741,903,2829">
+<area shape="rect" id="node47" href="generic_announcements.html" title="generic_announcements" alt="" coords="353,3741,555,3829">
+<area shape="rect" id="node48" href="instance_user_role_requests.html" title="instance_user_role_requests" alt="" coords="342,3952,566,4040">
+<area shape="rect" id="node49" href="instance_users.html" title="instance_users" alt="" coords="378,3847,530,3935">
+<area shape="rect" id="node50" href="user_emails.html" title="user_emails" alt="" coords="387,487,521,575">
+<area shape="rect" id="node51" href="user_identities.html" title="user_identities" alt="" coords="379,592,529,680">
+<area shape="rect" id="node52" href="user_notifications.html" title="user_notifications" alt="" coords="371,697,537,785">
 </map>
 
 					<a name='diagram'><img id='twodegreesDegreeImg' src='../diagrams/course_user_invitations.2degrees.png' usemap='#twoDegreesRelationshipsDiagram' class='diagram' border='0' alt='' align='left'></a>							

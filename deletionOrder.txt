@@ -10,8 +10,8 @@ attachments
 attachment_references
 ar_internal_metadata
 activities
-course_virtual_classrooms
 course_user_invitations
+course_virtual_classrooms
 course_lesson_plan_todos
 course_group_users
 course_experience_points_records
@@ -25,6 +25,7 @@ instance_user_role_requests
 course_user_achievements
 course_survey_answer_options
 course_reference_times
+course_personal_times
 course_lesson_plan_event_materials
 course_forum_topic_views
 course_forum_subscriptions
@@ -39,6 +40,8 @@ course_assessment_answer_auto_gradings
 user_notifications
 user_identities
 user_emails
+course_video_submission_statistics
+course_video_statistics
 course_video_events
 course_notifications
 course_levels
@@ -53,7 +56,6 @@ course_survey_answers
 course_assessment_skills
 course_video_sessions
 course_materials
-course_groups
 course_forum_topics
 course_assessment_answers
 course_question_assessments
@@ -62,12 +64,13 @@ course_assessment_question_text_response_compre_points
 course_assessment_question_programming_test_cases
 course_assessment_question_multiple_response_options
 course_assessment_answer_programming_files
-course_lesson_plan_items
+course_groups
 course_achievements
+course_lesson_plan_items
 course_users
-course_video_submissions
 course_survey_responses
 course_assessment_skill_branches
+course_video_submissions
 course_survey_questions
 course_forums
 course_assessment_question_programming

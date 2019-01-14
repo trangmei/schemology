@@ -27,12 +27,13 @@ course_reference_timelines
 course_assessment_question_programming
 course_forums
 course_survey_questions
+course_video_submissions
 course_assessment_skill_branches
 course_survey_responses
-course_video_submissions
 course_users
-course_achievements
 course_lesson_plan_items
+course_achievements
+course_groups
 course_assessment_answer_programming_files
 course_assessment_question_multiple_response_options
 course_assessment_question_programming_test_cases
@@ -41,7 +42,6 @@ course_survey_question_options
 course_question_assessments
 course_assessment_answers
 course_forum_topics
-course_groups
 course_materials
 course_video_sessions
 course_assessment_skills
@@ -56,6 +56,8 @@ course_condition_assessments
 course_levels
 course_notifications
 course_video_events
+course_video_statistics
+course_video_submission_statistics
 user_emails
 user_identities
 user_notifications
@@ -70,6 +72,7 @@ course_enrol_requests
 course_forum_subscriptions
 course_forum_topic_views
 course_lesson_plan_event_materials
+course_personal_times
 course_reference_times
 course_survey_answer_options
 course_user_achievements
@@ -83,8 +86,8 @@ generic_announcements
 course_experience_points_records
 course_group_users
 course_lesson_plan_todos
-course_user_invitations
 course_virtual_classrooms
+course_user_invitations
 activities
 ar_internal_metadata
 attachment_references
